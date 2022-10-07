@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<form col="6">
+    <label name="sequence"/>
+    <field name="sequence"/>
+    <newline/>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="template"/>
+    <field name="template"/>
+    <group col='2' colspan='4'>
+        <label name="data"/>
+        <field name="data" widget='image'/>
+        <label name="thumbnail"/>
+        <field name="thumbnail" widget='image'/>
+    </group>
+</form>

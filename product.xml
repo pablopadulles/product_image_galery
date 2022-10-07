@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+
+<!-- ProductImageGalery -->
+        <record model="ir.ui.view" id="product_image_galery_sequence_view_tree">
+            <field name="model">product.image.galery</field>
+            <field name="type">tree</field>
+            <field name="name">product_image_galery_sequence_tree</field>
+        </record>        
+        <record model="ir.ui.view" id="product_image_galery_view_tree">
+            <field name="model">product.image.galery</field>
+            <field name="type">tree</field>
+            <field name="name">product_image_galery_tree</field>
+        </record>
+        <record model="ir.ui.view" id="product_image_galery_view_form">
+            <field name="model">product.image.galery</field>
+            <field name="type">form</field>
+            <field name="name">product_image_galery_form</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_product_image_galery">
+            <field name="name">Product Image Galery</field>
+            <field name="res_model">product.image.galery</field>
+            <field name="domain" eval="" pyson="1"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_product_image_galery_tree_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="product_image_galery_view_tree"/>
+            <field name="act_window" ref="act_product_image_galery"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_product_image_galery_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="product_image_galery_view_form"/>
+            <field name="act_window" ref="act_product_image_galery"/>
+        </record>
+
+        <menuitem
+            parent="product.menu_main_product"
+            sequence="100"
+            action="act_product_image_galery"
+            id="menu_product_image_galery"/>
+
+        <record model="ir.model.access" id="access_product_image_galery_admin">
+            <field name="model" search="[('model', '=', 'product.image.galery')]"/>
+            <field name="group" ref="product.group_product_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+<!-- Template -->
+        <record model="ir.ui.view" id="template_view_form">
+            <field name="model">product.template</field>
+            <field name="inherit" ref="product.template_view_form"/>
+            <field name="name">template_form</field>
+        </record>
+
+        
+    </data>
+</tryton>
