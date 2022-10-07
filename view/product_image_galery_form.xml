@@ -7,7 +7,7 @@
     <field name="name"/>
     <label name="template"/>
     <field name="template"/>
-    <group col="2" colspan="4">
+    <group col="2" colspan="4" id="images">
         <label name="data"/>
         <field name="data" widget="image"/>
         <label name="thumbnail"/>
