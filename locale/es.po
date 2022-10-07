@@ -1,0 +1,57 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:product.image.galery,data:"
+msgid "Data"
+msgstr "Imagen"
+
+msgctxt "field:product.image.galery,file_id:"
+msgid "File ID"
+msgstr "Identificador del fichero"
+
+msgctxt "field:product.image.galery,name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:product.image.galery,template:"
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+msgctxt "field:product.image.galery,thumbnail:"
+msgid "Data Thumbnail"
+msgstr "Thumbnail"
+
+msgctxt "field:product.image.galery,thumbnail_id:"
+msgid "Thumbnail ID"
+msgstr "Thumbnail ID"
+
+msgctxt "field:product.image.galery,thumbnails:"
+msgid "Data Thumbnails"
+msgstr "Thumbnails"
+
+msgctxt "field:product.template,image_galery:"
+msgid "Product Image Galery"
+msgstr "Galería de imágenes"
+
+msgctxt "help:product.image.galery,template:"
+msgid ""
+"The product that defines the common properties inherited by the variant."
+msgstr ""
+"El producto que define las propiedades comunes que se heredan a la variante."
+
+msgctxt "model:ir.action,name:act_product_image_galery"
+msgid "Product Image Galery"
+msgstr "Galería de imágenes para Productos"
+
+msgctxt "model:ir.ui.menu,name:menu_product_image_galery"
+msgid "Product Image Galery"
+msgstr "Galería de imágenes"
+
+msgctxt "model:product.image.galery,name:"
+msgid "Product Image Galery"
+msgstr "Galería de imágenes del Producto"
+
+msgctxt "view:product.template:"
+msgid "Image Galery"
+msgstr "Galería de imágenes"

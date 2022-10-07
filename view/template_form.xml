@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <data>
     <xpath expr="/form/notebook" position="inside">
-        <page string="Image Galery" id="image_galery">
+        <page string="Image Galery" id="image_galery" name="image_galery">
             <field name="image_galery" view_ids="product_image_galery.product_image_galery_sequence_view_tree"/>
         </page>
     </xpath>

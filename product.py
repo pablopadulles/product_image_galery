@@ -45,4 +45,4 @@ class ProductImageGalery(sequence_ordered(), ModelSQL, ModelView):
 class Template(metaclass=PoolMeta):
     __name__ = "product.template"
 
-    image_galery = fields.One2Many('product.image.galery', 'template', 'Product Template', )
+    image_galery = fields.One2Many('product.image.galery', 'template', 'Product Image Galery')
