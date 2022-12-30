@@ -32,7 +32,7 @@ class ProductImageGalery(sequence_ordered(), ModelSQL, ModelView):
         domain=[
             If(Eval('active'), ('active', '=', True), ()),
             ],
-        help="The product that defines the common properties "
+        help="The product images "
         "inherited by the variant.")
     data = fields.Binary('Data', filename='name',
         file_id=file_id, store_prefix=store_prefix)
@@ -40,7 +40,17 @@ class ProductImageGalery(sequence_ordered(), ModelSQL, ModelView):
         file_id=thumbnail_id, store_prefix=store_prefix)
     file_id = fields.Char('File ID', readonly=True)
     thumbnail_id = fields.Char('Thumbnail ID', readonly=True)
+    path_data = fields.Function(fields.Char('Path Data'), 'get_path')
+    path_thumbnail = fields.Function(fields.Char('Path thumbnail'), 'get_path')
 
+    def get_path(self, name):
+        path = ''
+        if name == 'path_data':
+            path = '/' + self.file_id[:2] + '/' + self.file_id[2:4] + '/' + self.file_id
+        if name == 'path_thumbnail':
+            path = '/' + self.thumbnail_id[:2] + '/' + self.thumbnail_id[2:4] + '/' + self.thumbnail_id
+        return path
+    
 
 class Template(metaclass=PoolMeta):
     __name__ = "product.template"
