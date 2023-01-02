@@ -53,12 +53,13 @@ class ProductImageGalery(sequence_ordered(), ModelSQL, ModelView):
             
     def get_images_path(self, name):
         dic = {}
-        if self.data: 
+        if self.file_id: 
             dic['path_data'] =  '/' + self.file_id[:2] + '/' + self.file_id[2:4] + '/' + self.file_id
-        if self.thumbnail:
+        if self.thumbnail_id:
             dic['path_thumbnail'] = '/' + self.thumbnail_id[:2] + '/' + self.thumbnail_id[2:4] + '/' + self.thumbnail_id
     
         return dic
+
 
 class Template(metaclass=PoolMeta):
     __name__ = "product.template"
