@@ -42,15 +42,23 @@ class ProductImageGalery(sequence_ordered(), ModelSQL, ModelView):
     thumbnail_id = fields.Char('Thumbnail ID', readonly=True)
     path_data = fields.Function(fields.Char('Path Data'), 'get_path')
     path_thumbnail = fields.Function(fields.Char('Path thumbnail'), 'get_path')
+    images = fields.Function(fields.Char('Path Images'), 'get_images_path')
 
     def get_path(self, name):
         path = ''
         if name == 'path_data':
-            path = '/' + self.file_id[:2] + '/' + self.file_id[2:4] + '/' + self.file_id
+            return '/' + self.file_id[:2] + '/' + self.file_id[2:4] + '/' + self.file_id
         if name == 'path_thumbnail':
-            path = '/' + self.thumbnail_id[:2] + '/' + self.thumbnail_id[2:4] + '/' + self.thumbnail_id
-        return path
+            return '/' + self.thumbnail_id[:2] + '/' + self.thumbnail_id[2:4] + '/' + self.thumbnail_id
+            
+    def get_images_path(self, name):
+        dic = {}
+        if self.data: 
+            dic['path_data'] =  '/' + self.file_id[:2] + '/' + self.file_id[2:4] + '/' + self.file_id
+        if self.thumbnail:
+            dic['path_thumbnail'] = '/' + self.thumbnail_id[:2] + '/' + self.thumbnail_id[2:4] + '/' + self.thumbnail_id
     
+        return dic
 
 class Template(metaclass=PoolMeta):
     __name__ = "product.template"
