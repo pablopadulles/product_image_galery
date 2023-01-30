@@ -5,11 +5,14 @@
     <newline/>
     <label name="name"/>
     <field name="name"/>
+    <label name="thumbnail_name"/>
+    <field name="thumbnail_name"/>
     <label name="template"/>
     <field name="template"/>
     <group col="2" colspan="4" id="images">
         <label name="data"/>
         <field name="data" widget="image"/>
+        <button name="generate_thumbnail" colspan="2"/>
         <label name="thumbnail"/>
         <field name="thumbnail" widget="image"/>
     </group>

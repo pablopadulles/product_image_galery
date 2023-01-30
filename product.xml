@@ -59,6 +59,20 @@ this repository contains the full copyright notices and license terms. -->
             <field name="name">template_form</field>
         </record>
 
+<!-- buttons -->
+        <record model="ir.model.button" id="generate_thumbnail_button">
+            <field name="name">generate_thumbnail</field>
+            <field name="string">Generar Thumbnail</field>
+            <field name="model"
+                search="[('model', '=', 'product.image.galery')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="generate_thumbnail_button_group_product_admin">
+            <field name="button" ref="generate_thumbnail_button"/>
+            <field name="group" ref="product.group_product_admin"/>
+        </record>
+
+
         
     </data>
 </tryton>
